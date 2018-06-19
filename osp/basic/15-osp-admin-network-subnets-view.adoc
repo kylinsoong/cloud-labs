@@ -1,0 +1,3 @@
+= 网络子网明细
+
+image:img/15-osp-admin-network-subnets-view.png[网络子网明细]

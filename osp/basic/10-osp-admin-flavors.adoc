@@ -1,0 +1,3 @@
+= Flavor 列表
+
+image:img/10-osp-admin-flavors.png[Flavor 列表]

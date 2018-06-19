@@ -1,0 +1,3 @@
+= 网络浮动 IP
+
+image:img/19-osp-admin-floating.png[网络浮动 IP]

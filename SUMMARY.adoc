@@ -37,3 +37,5 @@
 ... link:osp/basic/32-osp-admin-projects-templetes.adoc[资源类型]
 ... link:osp/basic/33-osp-admin-projects-objectsstores.adoc[Object Store]
 . link:ocp/README.adoc[OPENSHIFT]
+.. link:ocp/env.adoc[客户端环境准备]
+.. link:ocp/getstart.adoc[Get Starts]

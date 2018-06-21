@@ -38,4 +38,6 @@
 ... link:osp/basic/33-osp-admin-projects-objectsstores.adoc[Object Store]
 . link:ocp/README.adoc[OPENSHIFT]
 .. link:ocp/env.adoc[客户端环境准备]
-.. link:ocp/getstart.adoc[Get Starts]
+.. link:ocp/getstart.adoc[快速开始]
+.. link:ocp/modernize-apps.adoc[传统应用云原生之路]
+.. link:ocp/devops.adoc[DevOps]

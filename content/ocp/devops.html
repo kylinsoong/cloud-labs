@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>快速开始 · GitBook</title>
+        <title>DevOps · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="modernize-apps.html" />
     
-    
-    <link rel="prev" href="env.html" />
+    <link rel="prev" href="modernize-apps.html" />
     
 
     </head>
@@ -596,7 +594,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.2" data-path="getstart.html">
+        <li class="chapter " data-level="1.3.2" data-path="getstart.html">
             
                 <a href="getstart.html">
             
@@ -622,7 +620,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="devops.html">
+        <li class="chapter active" data-level="1.3.4" data-path="devops.html">
             
                 <a href="devops.html">
             
@@ -670,7 +668,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >快速开始</a>
+        <a href=".." >DevOps</a>
     </h1>
 </div>
 
@@ -685,218 +683,8 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x5FEB;&#x901F;&#x5F00;&#x59CB;">&#x5FEB;&#x901F;&#x5F00;&#x59CB;</h1>
-<div id="toc" class="toc">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#__">&#x547D;&#x4EE4;&#x884C;</a></li>
-<li><a href="#_web_console">Web Console</a></li>
-<li><a href="#__docker_image">&#x90E8;&#x7F72;&#x4E00;&#x4E2A; Docker Image</a></li>
-<li><a href="#___2">&#x5E94;&#x7528;&#x6269;&#x5C55;</a></li>
-<li><a href="#__http">&#x7ED9; HTTP &#x8BF7;&#x6C42;&#x914D;&#x7F6E;&#x8DEF;&#x7531;</a></li>
-<li><a href="#_s2i">S2I &#x6784;&#x5EFA;</a></li>
-</ul>
-</div>
-<div class="sect1">
-<h2 id="__">&#x547D;&#x4EE4;&#x884C;</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="title"><strong>1 - &#x547D;&#x4EE4;&#x884C;&#x767B;&#x5F55;</strong></div>
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ oc login https://master.example.com:8443
-Authentication required <span class="hljs-keyword">for</span> https://master.example.com:8443 (openshift)
-Username: userXX
-Password:
-Login successful.
+                                <h1 id="devops">DevOps</h1>
 
-You don<span class="hljs-string">&apos;t have any projects. You can try to create a new project, by running
-
-    oc new-project &lt;projectname&gt;</span></code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title"><strong>2 - &#x767B;&#x5F55;&#x9A8C;&#x8BC1;</strong></div>
-<div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ oc whoami
-userXX</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_web_console">Web Console</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x8F93;&#x5165; <a href="https://master.example.com:8443" class="bare" target="_blank">https://master.example.com:8443</a> &#x8FDB;&#x5165; OpenShift &#x5BB9;&#x5668;&#x4E91;&#x5E73;&#x53F0;&#x767B;&#x5F55;&#x9875;&#x9762;</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-login.png" alt="ocp login.png"></span></p>
-</div>
-<div class="paragraph">
-<p>&#x5728;&#x4E0A;&#x9762;&#x767B;&#x5F55;&#x9875;&#x9762;&#x8F93;&#x5165;</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Username - <strong>userXX</strong></p>
-</li>
-<li>
-<p>Password - <strong>redhat</strong></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>&#x70B9;&#x51FB; <code>logIn</code>&#xFF0C;&#x8FDB;&#x5165; Web Console &#x6B22;&#x8FCE;&#x754C;&#x9762;&#x3002;&#x5728;&#x9875;&#x9762;&#x7684;&#x53F3;&#x4E0A;&#x89D2;&#x4F60;&#x4F1A;&#x53D1;&#x73B0; <code>Create Project</code> &#x6309;&#x94AE;&#xFF0C;&#x70B9;&#x51FB;&#x521B;&#x5EFA; Project</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-create-project.png" alt="ocp create project.png"></span></p>
-</div>
-<div class="paragraph">
-<p>&#x5728;&#x521B;&#x5EFA; project &#x7684;&#x754C;&#x9762;&#x8F93;&#x5165;&#xFF1A;</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Name - <code>testXX</code></p>
-</li>
-<li>
-<p>Display Name - &#x4EFB;&#x610F;&#x540D;&#x79F0;</p>
-</li>
-<li>
-<p>Description - &#x4EFB;&#x610F;&#x63CF;&#x7ED8;&#x82CF;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>&#x70B9;&#x51FB; <code>Create</code> &#x6309;&#x94AE;&#x521B;&#x5EFA; project&#x3002;</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-project-created.png" alt="ocp project created.png"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="__docker_image">&#x90E8;&#x7F72;&#x4E00;&#x4E2A; Docker Image</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>&#x70B9;&#x51FB; <code>Docker Image</code> &#x6309;&#x94AE;&#xFF0C;&#x9009;&#x62E9; Image Name&#xFF0C;&#x5E76;&#x4E14;&#x8F93;&#x5165;</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>registry.example.com/openshiftroadshow/parksmap-katacoda:1.0.0</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>&#x6309; Enter &#x952E;&#xFF0C;</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-deploy-image-parkmap.png" alt="ocp deploy image parkmap.png"></span></p>
-</div>
-<div class="paragraph">
-<p>&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;&#xFF0C;&#x70B9;&#x51FB; <code>Deploy</code> &#x6309;&#x94AE;&#x8FDB;&#x884C;&#x90E8;&#x7F72;&#x3002;</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-created-parkmap.png" alt="ocp created parkmap.png"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="___2">&#x5E94;&#x7528;&#x6269;&#x5C55;</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>&#x70B9;&#x51FB;&#x5411;&#x4E0A;&#x6309;&#x94AE;&#x6269;&#x5C55; parksmap Pod &#x7684;&#x6570;&#x91CF;&#x4E3A; 2&#xFF0C;&#x70B9;&#x51FB; Applications &#x2192; Pods&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6709;&#x4E24;&#x4E2A;&#x8FD0;&#x884C;&#x7684; Pods:</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-parkmap-pod-scale-up.png" alt="ocp parkmap pod scale up.png"></span></p>
-</div>
-<div class="paragraph">
-<p>&#x70B9;&#x51FB;&#x8FDB;&#x5165;&#x4EFB;&#x610F;&#x4E00;&#x4E2A; Pod, &#x5728;&#x53F3;&#x4E0A;&#x89D2;&#x70B9;&#x51FB; Action &#x4E0B;&#x62C9;&#x83DC;&#x5355;&#xFF0C;&#x4F1A;&#x770B;&#x5230;&#x6709; Delete &#x9009;&#x9879;&#xFF1A;</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-pod-actions-delete.png" alt="ocp pod actions delete.png"></span></p>
-</div>
-<div class="paragraph">
-<p>&#x70B9;&#x51FB; <code>Delete</code> &#x5220;&#x9664; Pod, &#x8FD4;&#x56DE;&#x5230; Pod &#x5217;&#x8868;&#xFF0C;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6709;&#x4E00;&#x4E2A;&#x65B0;&#x7684; Pod &#x6B63;&#x5728;&#x521B;&#x5EFA;</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-pod-delete.png" alt="ocp pod delete.png"></span></p>
-</div>
-<div class="paragraph">
-<p>&#x9009;&#x62E9; Overview, &#x70B9;&#x51FB; Pod &#x65C1;&#x8FB9;&#x5411;&#x4E0B;&#x7BAD;&#x5934;&#xFF0C;&#x5C06; Pod &#x6570;&#x91CF;&#x964D;&#x4F4E;&#x4E3A; 1</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-pod-scale-down.png" alt="ocp pod scale down.png"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="__http">&#x7ED9; HTTP &#x8BF7;&#x6C42;&#x914D;&#x7F6E;&#x8DEF;&#x7531;</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>&#x9009;&#x62E9; Overview, &#x70B9;&#x51FB; Pod&#xFF0C;&#x5728; <code>NETWORKING</code> &#x680F;&#x70B9;&#x51FB; <code>Create Route</code>&#xFF0C;</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-route-create.png" alt="ocp route create.png"></span></p>
-</div>
-<div class="paragraph">
-<p>&#x70B9;&#x51FB; Create &#x6309;&#x94AE;&#x521B;&#x5EFA;&#x8DEF;&#x7531;&#x3002;&#x9009;&#x62E9; Applications &#x2192; Routes &#x53EF;&#x4EE5;&#x67E5;&#x770B;</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-routes-view.png" alt="ocp routes view.png"></span></p>
-</div>
-<div class="paragraph">
-<p>&#x70B9;&#x51FB;&#x4E0A;&#x9762;&#x6B65;&#x9AA4;&#x4E2D; URL&#xFF08;http://parksmap-katacoda-test09.apps.example.com/&#xFF09;&#x8BBF;&#x95EE;</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-parkmap-web.png" alt="ocp parkmap web.png"></span></p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_s2i">S2I &#x6784;&#x5EFA;</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>&#x5E94;&#x7528;&#x4EE3;&#x7801;&#x8DEF;&#x5F84;&#xFF1A; <a href="http://git.example.com/open-source/nationalparks-katacoda.git" class="bare" target="_blank">http://git.example.com/open-source/nationalparks-katacoda.git</a></p>
-</div>
-<div class="paragraph">
-<p>&#x5728; project &#x53F3;&#x4E0A;&#x89D2;&#xFF0C;Add to Project</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-addproject-catalog.png" alt="ocp addproject catalog.png"></span></p>
-</div>
-<div class="paragraph">
-<p>&#x9009;&#x62E9; <code>Languages</code> &#x2192; <code>Python</code> &#x2192; <code>Python</code></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-catalog-python.png" alt="ocp catalog python.png"></span></p>
-</div>
-<div class="paragraph">
-<p>&#x5728;&#x5F39;&#x51FA;&#x7684;&#x5BF9;&#x8BDD;&#x6846;&#x4E2D;&#x70B9;&#x51FB; Next&#xFF0C;&#x5728; Configuration &#x680F;&#x7F16;&#x8F91;:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Version - 3.5</p>
-</li>
-<li>
-<p>Application Name - nationalparks-katacoda</p>
-</li>
-<li>
-<p>Git Repository - <a href="http://git.example.com/open-source/nationalparks-katacoda.git" class="bare" target="_blank">http://git.example.com/open-source/nationalparks-katacoda.git</a></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-catalog-config.png" alt="ocp catalog config.png"></span></p>
-</div>
-<div class="paragraph">
-<p>&#x70B9;&#x51FB; Create &#x5B8C;&#x6210;&#x521B;&#x5EFA;&#x3002;&#x9009;&#x62E9; Overview, &#x5C55;&#x5F00; nationalparks-katacoda&#xFF0C;&#x67E5;&#x770B; S2I &#x6784;&#x5EFA;&#x7684;&#x8FC7;&#x7A0B;&#xFF1A;</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="img/ocp-s2i-build.png" alt="ocp s2i build.png"></span></p>
-</div>
-</div>
-</div>
                                 
                                 </section>
                             
@@ -923,14 +711,10 @@ userXX</code></pre>
 
             
                 
-                <a href="env.html" class="navigation navigation-prev " aria-label="Previous page: 客户端环境准备">
+                <a href="modernize-apps.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 传统应用云原生之路">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="modernize-apps.html" class="navigation navigation-next " aria-label="Next page: 传统应用云原生之路">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -939,7 +723,7 @@ userXX</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"快速开始","level":"1.3.2","depth":2,"next":{"title":"传统应用云原生之路","level":"1.3.3","depth":2,"path":"ocp/modernize-apps.adoc","ref":"ocp/modernize-apps.adoc","articles":[]},"previous":{"title":"客户端环境准备","level":"1.3.1","depth":2,"path":"ocp/env.adoc","ref":"ocp/env.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"copyrightYear":"2018","copyrightHolder":"Kylin Soong"},"plugins":["collapsible-menu","-sharing","sharing-plus","splitter","back-to-top-button","edit-link"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Kylin Soong 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"collapsible-menu":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"wechat":"http://ksoong.org/cloud-labs/content/images/wechat.png","alipay":"http://ksoong.org/cloud-labs/content/images/alipay.png","title":"","button":"赞赏","alipayText":"支付宝捐赠","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"weibo":true,"linkedin":true,"google":true,"facebook":true,"all":["facebook","google","linkedin","weibo"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/kylinsoong/cloud-labs/blob/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"ocp/getstart.adoc","mtime":"2018-06-19T10:34:53.109Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2018-06-21T14:40:51.833Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DevOps","level":"1.3.4","depth":2,"previous":{"title":"传统应用云原生之路","level":"1.3.3","depth":2,"path":"ocp/modernize-apps.adoc","ref":"ocp/modernize-apps.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"copyrightYear":"2018","copyrightHolder":"Kylin Soong"},"plugins":["collapsible-menu","-sharing","sharing-plus","splitter","back-to-top-button","edit-link"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Kylin Soong 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"collapsible-menu":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"wechat":"http://ksoong.org/cloud-labs/content/images/wechat.png","alipay":"http://ksoong.org/cloud-labs/content/images/alipay.png","title":"","button":"赞赏","alipayText":"支付宝捐赠","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"weibo":true,"linkedin":true,"google":true,"facebook":true,"all":["facebook","google","linkedin","weibo"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/kylinsoong/cloud-labs/blob/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"ocp/devops.adoc","mtime":"2018-06-21T14:34:33.838Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2018-06-21T14:40:51.833Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

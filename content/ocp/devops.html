@@ -684,7 +684,140 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="devops">DevOps</h1>
-
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#__">&#x73AF;&#x5883;&#x51C6;&#x5907;</a></li>
+<li><a href="#___2">&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5DE5;&#x7A0B;</a></li>
+<li><a href="#__cicd">&#x521B;&#x5EFA;CICD &#x6784;&#x5EFA;&#x521B;&#x59CB;&#x6A21;&#x578B;</a></li>
+<li><a href="#_cicd">CICD &#x521D;&#x59CB;&#x6A21;&#x578B;&#x6D4B;&#x8BD5;</a></li>
+<li><a href="#__php">&#x6DFB;&#x52A0; PHP &#x9879;&#x76EE;&#x6784;&#x5EFA;</a></li>
+<li><a href="#__cicd_2">&#x81EA;&#x52A8;&#x89E6;&#x53D1; CICD &#x6784;&#x5EFA;</a></li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="__">&#x73AF;&#x5883;&#x51C6;&#x5907;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x70B9;&#x51FB; <a href="http://yum.example.com/downloads/lab3/" class="bare" target="_blank">http://yum.example.com/downloads/lab3/</a> &#x4E0B;&#x8F7D;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ocp-cicd-download.png" alt="ocp cicd download.png"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="___2">&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5DE5;&#x7A0B;</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ oc login https://master.example.com:8443 -u userXX -p redhat
+$ oc new-project cicd-devXX</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__cicd">&#x521B;&#x5EFA;CICD &#x6784;&#x5EFA;&#x521B;&#x59CB;&#x6A21;&#x578B;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x767B;&#x5F55; Web console&#xFF08;https://master.example.com:8443&#xFF09;&#x754C;&#x9762;&#xFF0C;&#x5728;&#x5DE5;&#x7A0B;&#x5217;&#x8868;&#x4E2D;&#x70B9;&#x51FB; <code>cicd-devXX</code> &#x8FDB;&#x5165;&#x521D;&#x59CB;&#x754C;&#x9762;&#xFF0C;&#x70B9;&#x51FB; <code>Import YAML/JSON</code> &#x6309;&#x94AE;&#xFF0C;&#x8FDB;&#x5165; DevOps CICD &#x6784;&#x5EFA;&#x521D;&#x59CB;&#x6A21;&#x578B;&#x521B;&#x5EFA;&#x754C;&#x9762;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ocp-cicd-import-jenkeins.png" alt="ocp cicd import jenkeins.png"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x70B9;&#x51FB; Browser, &#x9009;&#x62E9; <code>demopipeline.yaml</code>, &#x5BFC;&#x5165;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p>&#x70B9;&#x51FB; <code>Create</code> &#x5F00;&#x59CB;&#x521B;&#x5EFA;&#x3002;&#x7B49;&#x5F85; 1 - 2 &#x5206;&#x949F;&#x540E;&#x90E8;&#x7F72;&#x6210;&#x529F;&#xFF0C;&#x67E5;&#x770B;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#xFF1A;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ oc get routes
+NAME      HOST/PORT                             PATH      SERVICES   PORT      TERMINATION     WILDCARD
+jenkins   jenkins-cicd-devXX.apps.example.com             jenkins    &lt;all&gt;     edge/Redirect   None</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_cicd">CICD &#x521D;&#x59CB;&#x6A21;&#x578B;&#x6D4B;&#x8BD5;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x5728; Web Console &#x4E0A;&#x9009;&#x62E9; <code>Buils</code> &#x2192; <code>Pipelines</code>&#xFF0C;&#x8FDB;&#x5165;&#x5230; Pipelines &#x5217;&#x8868;&#xFF0C;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ocp-cicd-demo-start.png" alt="ocp cicd demo start.png"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x70B9;&#x51FB;&#x53F3;&#x4E0A;&#x89D2; <code>Start Pipleline</code> &#x6309;&#x94AE;&#x5F00;&#x59CB;&#x4E00;&#x6B21;&#x6784;&#x5EFA;&#xFF0C;&#x6784;&#x5EFA;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x70B9;&#x51FB; <code>View Log</code>, &#x91CD;&#x5B9A;&#x5411;&#x5230; <a href="https://jenkins-cicd-devXX.apps.example.com/" class="bare" target="_blank">https://jenkins-cicd-devXX.apps.example.com/</a> &#x8FDB;&#x5165; jenkins-cicd &#x754C;&#x9762;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ocp-cicd-jenkens-sso.png" alt="ocp cicd jenkens sso.png"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x70B9;&#x51FB; <code>Login with Openshift</code> &#x4F7F;&#x7528; OpenShift &#x767B;&#x5F55;&#x7528;&#x6237;/&#x5BC6;&#x7801;&#x767B;&#x5F55;, jenkins &#x6784;&#x5EFA;&#x65E5;&#x5FD7;&#x754C;&#x9762;&#x5982;&#x4E0B;&#xFF1A;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ocp-cicd-jenkins-logs.png" alt="ocp cicd jenkins logs.png"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x5728; OpenShift Web Console &#x754C;&#x9762;&#x70B9;&#x51FB; <code>Confim App Deploy</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ocp-cicd-approval.png" alt="ocp cicd approval.png"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x70B9;&#x51FB; Process &#x8FDB;&#x884C; Deploy</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ocp-cicd-approval-process.png" alt="ocp cicd approval process.png"></span></p>
+</div>
+<div class="paragraph">
+<p>CICD &#x4E00;&#x6B21;&#x6210;&#x529F;&#x6784;&#x5EFA;&#x754C;&#x9762;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ocp-cicd-demo-success.png" alt="ocp cicd demo success.png"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__php">&#x6DFB;&#x52A0; PHP &#x9879;&#x76EE;&#x6784;&#x5EFA;</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>&#x5728; Web Console &#x4E0A;&#x9009;&#x62E9; <code>Buils</code> &#x2192; <code>Pipelines</code> &#x2192; <code>Action</code> &#x2192; <code>Edit</code>&#xFF0C;&#x5728; Build Stage &#x6DFB;&#x52A0;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">sh <span class="hljs-string">&quot;oc new-app php:7.0~http://git.example.com/open-source/php-helloworld.git --name=php-helloworld&quot;</span>
+sh <span class="hljs-string">&quot;oc expose svc/php-helloworld&quot;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ocp-cicd-deploy-php.png" alt="ocp cicd deploy php.png"></span></p>
+</div>
+<div class="paragraph">
+<p>&#x4FDD;&#x5B58;&#x540E;&#x518D;&#x6B21;&#x89E6;&#x53D1; Pipeline&#xFF0C;&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="http://php-helloworld-cicd-devXX.apps.example.com/" class="bare" target="_blank">http://php-helloworld-cicd-devXX.apps.example.com/</a> &#x8BBF;&#x95EE; PHP &#x9875;&#x9762;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ocp-cicd-php-view.png" alt="ocp cicd php view.png"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__cicd_2">&#x81EA;&#x52A8;&#x89E6;&#x53D1; CICD &#x6784;&#x5EFA;</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl -k -X POST https://master.example.com:8443/oapi/v1/namespaces/cicd-dev10/buildconfigs/demopipeline/webhooks/secret101/generic</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>&#x5982;&#x4E0A;&#x547D;&#x4EE4;&#x4F1A;&#x81EA;&#x52A8;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x3002;</p>
+</div>
+</div>
+</div>
                                 
                                 </section>
                             
@@ -723,7 +856,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DevOps","level":"1.3.4","depth":2,"previous":{"title":"传统应用云原生之路","level":"1.3.3","depth":2,"path":"ocp/modernize-apps.adoc","ref":"ocp/modernize-apps.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"copyrightYear":"2018","copyrightHolder":"Kylin Soong"},"plugins":["collapsible-menu","-sharing","sharing-plus","splitter","back-to-top-button","edit-link"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Kylin Soong 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"collapsible-menu":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"wechat":"http://ksoong.org/cloud-labs/content/images/wechat.png","alipay":"http://ksoong.org/cloud-labs/content/images/alipay.png","title":"","button":"赞赏","alipayText":"支付宝捐赠","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"weibo":true,"linkedin":true,"google":true,"facebook":true,"all":["facebook","google","linkedin","weibo"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/kylinsoong/cloud-labs/blob/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"ocp/devops.adoc","mtime":"2018-06-21T14:34:33.838Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2018-06-21T14:40:51.833Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DevOps","level":"1.3.4","depth":2,"previous":{"title":"传统应用云原生之路","level":"1.3.3","depth":2,"path":"ocp/modernize-apps.adoc","ref":"ocp/modernize-apps.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"copyrightYear":"2018","copyrightHolder":"Kylin Soong"},"plugins":["collapsible-menu","-sharing","sharing-plus","splitter","back-to-top-button","edit-link"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Kylin Soong 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"collapsible-menu":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"wechat":"http://ksoong.org/cloud-labs/content/images/wechat.png","alipay":"http://ksoong.org/cloud-labs/content/images/alipay.png","title":"","button":"赞赏","alipayText":"支付宝捐赠","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"weibo":true,"linkedin":true,"google":true,"facebook":true,"all":["facebook","google","linkedin","weibo"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/kylinsoong/cloud-labs/blob/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"ocp/devops.adoc","mtime":"2018-06-22T08:36:14.197Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2018-06-22T08:36:25.589Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,6 +1,12 @@
 = 传统应用云原生之路
 :toc: manual
 
+== 下载相关工具包
+
+通过 http://yum.example.com/downloads/lab2/ 可以下载本实验相关的工具包:
+
+image:img/labs2-downloads.png[]
+
 == 传统应用迁移
 
 image:img/rhamt-logo.png[]

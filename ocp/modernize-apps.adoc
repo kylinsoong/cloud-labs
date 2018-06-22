@@ -7,6 +7,8 @@
 
 image:img/labs2-downloads.png[]
 
+NOTE: 本地内容如果对 App Dev 感兴趣，且要体验传统应用云原生化，需要安装 Java，Maven 等, 具体可在上图中下载。  
+
 == 传统应用迁移
 
 image:img/rhamt-logo.png[]
@@ -24,7 +26,9 @@ wget https://developers.redhat.com/download-manager/file/migrationtoolkit-rhamt-
 $ ./rhamt-cli-4.0.1.Final/bin/rhamt-cli --sourceMode --input ./monolith/ --output ~/rhamt-reports/monolith --overwrite --source weblogic --target eap:7 --packages com.redhat weblogic
 ----
 
-运行结果：
+NOTE: Windows 下运行使用 `.\rhamt-cli-4.0.1.Final\bin\rhamt-cli --sourceMode --input monolith --output rhamt-reports\monolith --source weblogic --target eap:7 --packages com.redhat weblogic`。
+
+浏览器打开 `rhamt-reports/monolith/index.html` 查看运行结果：
 
 image:img/rhamt-reports.png[]
 
@@ -36,10 +40,10 @@ image:img/rhamt-reports.png[]
 
 image:img/rhamt-reports-issues.png[]
 
-问题修复：
+安装问题列表进行问题修复：
 
 [source, java]
-.*1 - com/redhat/coolstore/service/OrderServiceMDB.java*
+.*1 - 修改 com/redhat/coolstore/service/OrderServiceMDB.java，使内容显示如下*
 ----
 package com.redhat.coolstore.service;
 
@@ -96,7 +100,7 @@ public class OrderServiceMDB implements MessageListener {
 ----
 
 [source, java]
-.*2 - com/redhat/coolstore/service/InventoryNotificationMDB.java*
+.*2 - 修改 com/redhat/coolstore/service/InventoryNotificationMDB.java，使内容显示如下*
 ----
 package com.redhat.coolstore.service;
 
@@ -155,7 +159,7 @@ public class InventoryNotificationMDB implements MessageListener {
 ----
 
 [source, java]
-.*3 - com/redhat/coolstore/utils/StartupListener.java*
+.*3 - 修改 com/redhat/coolstore/utils/StartupListener.java，使内容显示如下*
 ----
 package com.redhat.coolstore.utils;
 
@@ -357,7 +361,7 @@ $ oc get svc
 $ oc get routes
 ----
 
-通过 访问如下所示
+通过 http://www-coolstoreXX.apps.example.com/ 访问如下所示
 
-image:img/monolith-cloud-native.png[]
+image:img/ocp-modernize-app-cloud.png[]
 

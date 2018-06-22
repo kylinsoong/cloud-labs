@@ -786,11 +786,16 @@ jenkins   jenkins-cicd-devXX.apps.example.com             jenkins    &lt;all&gt;
 <h2 id="__php">&#x6DFB;&#x52A0; PHP &#x9879;&#x76EE;&#x6784;&#x5EFA;</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>&#x5728; Web Console &#x4E0A;&#x9009;&#x62E9; <code>Buils</code> &#x2192; <code>Pipelines</code> &#x2192; <code>Action</code> &#x2192; <code>Edit</code>&#xFF0C;&#x5728; Build Stage &#x6DFB;&#x52A0;</p>
+<p>&#x5728; Web Console &#x4E0A;&#x9009;&#x62E9; <code>Buils</code> &#x2192; <code>Pipelines</code>&#xFF0C;&#x70B9;&#x51FB;&#x8FDB;&#x5165; <code>Action</code> &#x2192; <code>Edit</code>&#xFF0C;&#x5728; Build Stage &#x6DFB;&#x52A0;</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">sh <span class="hljs-string">&quot;oc new-app php:7.0~http://git.example.com/open-source/php-helloworld.git --name=php-helloworld&quot;</span>
+<pre class="highlight"><code class="language-bash" data-lang="bash">sh <span class="hljs-string">&quot;oc delete is php-helloworld || echo &apos;is no exist&apos;&quot;</span>
+sh <span class="hljs-string">&quot;oc delete bc php-helloworld || echo &apos;bc no exist&apos;&quot;</span>
+sh <span class="hljs-string">&quot;oc delete dc php-helloworld || echo &apos;dc no exist&apos;&quot;</span>
+sh <span class="hljs-string">&quot;oc delete svc php-helloworld || echo &apos;svc no exist&apos;&quot;</span>
+sh <span class="hljs-string">&quot;oc delete routes php-helloworld || echo &apos;route no exist&apos;&quot;</span>
+sh <span class="hljs-string">&quot;oc new-app php:7.0~http://git.example.com/open-source/php-helloworld.git --name=php-helloworld&quot;</span>
 sh <span class="hljs-string">&quot;oc expose svc/php-helloworld&quot;</span></code></pre>
 </div>
 </div>
@@ -798,7 +803,7 @@ sh <span class="hljs-string">&quot;oc expose svc/php-helloworld&quot;</span></co
 <p><span class="image"><img src="img/ocp-cicd-deploy-php.png" alt="ocp cicd deploy php.png"></span></p>
 </div>
 <div class="paragraph">
-<p>&#x4FDD;&#x5B58;&#x540E;&#x518D;&#x6B21;&#x89E6;&#x53D1; Pipeline&#xFF0C;&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="http://php-helloworld-cicd-devXX.apps.example.com/" class="bare" target="_blank">http://php-helloworld-cicd-devXX.apps.example.com/</a> &#x8BBF;&#x95EE; PHP &#x9875;&#x9762;</p>
+<p>&#x4FDD;&#x5B58;&#x540E;&#x518D;&#x6B21;&#x624B;&#x52A8;&#x89E6;&#x53D1; Pipeline&#xFF0C;&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="http://php-helloworld-cicd-devXX.apps.example.com/" class="bare" target="_blank">http://php-helloworld-cicd-devXX.apps.example.com/</a> &#x8BBF;&#x95EE; PHP &#x9875;&#x9762;</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="img/ocp-cicd-php-view.png" alt="ocp cicd php view.png"></span></p>
@@ -808,13 +813,19 @@ sh <span class="hljs-string">&quot;oc expose svc/php-helloworld&quot;</span></co
 <div class="sect1">
 <h2 id="__cicd_2">&#x81EA;&#x52A8;&#x89E6;&#x53D1; CICD &#x6784;&#x5EFA;</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x4F1A;&#x901A;&#x8FC7; Curl &#x547D;&#x4EE4;&#x6A21;&#x62DF;&#x4E00;&#x4E2A;&#x81EA;&#x52A8;&#x89E6;&#x53D1; Pipleline &#x6784;&#x5EFA;&#xFF0C;&#x672C;&#x90E8;&#x5206;&#x5B9E;&#x9A8C;&#x9700;&#x8981;&#x5B89;&#x88C5; curl&#x3002;</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl -k -X POST https://master.example.com:8443/oapi/v1/namespaces/cicd-dev10/buildconfigs/demopipeline/webhooks/secret101/generic</code></pre>
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ curl -k -X POST https://master.example.com:8443/oapi/v1/namespaces/cicd-devXX/buildconfigs/demopipeline/webhooks/secret101/generic</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>&#x5982;&#x4E0A;&#x547D;&#x4EE4;&#x4F1A;&#x81EA;&#x52A8;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x3002;</p>
+<p>&#x6784;&#x5EFA;&#x5B8C;&#x6210;&#x540E;&#x518D;&#x6B21;&#x8BBF;&#x95EE; <a href="http://php-helloworld-cicd-devXX.apps.example.com/&#xFF0C;&#x9875;&#x9762;&#x663E;&#x793A;&#x5982;&#x4E0B;" class="bare" target="_blank">http://php-helloworld-cicd-devXX.apps.example.com/&#xFF0C;&#x9875;&#x9762;&#x663E;&#x793A;&#x5982;&#x4E0B;</a></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/ocp-cicd-php-changed.png" alt="ocp cicd php changed.png"></span></p>
 </div>
 </div>
 </div>
@@ -856,7 +867,7 @@ sh <span class="hljs-string">&quot;oc expose svc/php-helloworld&quot;</span></co
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"DevOps","level":"1.3.4","depth":2,"previous":{"title":"传统应用云原生之路","level":"1.3.3","depth":2,"path":"ocp/modernize-apps.adoc","ref":"ocp/modernize-apps.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"copyrightYear":"2018","copyrightHolder":"Kylin Soong"},"plugins":["collapsible-menu","-sharing","sharing-plus","splitter","back-to-top-button","edit-link"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Kylin Soong 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"collapsible-menu":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"wechat":"http://ksoong.org/cloud-labs/content/images/wechat.png","alipay":"http://ksoong.org/cloud-labs/content/images/alipay.png","title":"","button":"赞赏","alipayText":"支付宝捐赠","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"weibo":true,"linkedin":true,"google":true,"facebook":true,"all":["facebook","google","linkedin","weibo"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/kylinsoong/cloud-labs/blob/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"ocp/devops.adoc","mtime":"2018-06-22T08:36:14.197Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2018-06-22T08:36:25.589Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"DevOps","level":"1.3.4","depth":2,"previous":{"title":"传统应用云原生之路","level":"1.3.3","depth":2,"path":"ocp/modernize-apps.adoc","ref":"ocp/modernize-apps.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"copyrightYear":"2018","copyrightHolder":"Kylin Soong"},"plugins":["collapsible-menu","-sharing","sharing-plus","splitter","back-to-top-button","edit-link"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Kylin Soong 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"collapsible-menu":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"wechat":"http://ksoong.org/cloud-labs/content/images/wechat.png","alipay":"http://ksoong.org/cloud-labs/content/images/alipay.png","title":"","button":"赞赏","alipayText":"支付宝捐赠","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"weibo":true,"linkedin":true,"google":true,"facebook":true,"all":["facebook","google","linkedin","weibo"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/kylinsoong/cloud-labs/blob/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"ocp/devops.adoc","mtime":"2018-06-22T10:26:54.783Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2018-06-22T10:30:24.583Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

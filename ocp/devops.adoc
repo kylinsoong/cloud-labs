@@ -60,25 +60,35 @@ image:img/ocp-cicd-demo-success.png[]
 
 == 添加 PHP 项目构建
 
-在 Web Console 上选择 `Buils` -> `Pipelines` -> `Action` -> `Edit`，在 Build Stage 添加
+在 Web Console 上选择 `Buils` -> `Pipelines`，点击进入 `Action` -> `Edit`，在 Build Stage 添加
 
 [source, bash]
 -----
+sh "oc delete is php-helloworld || echo 'is no exist'"
+sh "oc delete bc php-helloworld || echo 'bc no exist'"
+sh "oc delete dc php-helloworld || echo 'dc no exist'"
+sh "oc delete svc php-helloworld || echo 'svc no exist'"
+sh "oc delete routes php-helloworld || echo 'route no exist'"
 sh "oc new-app php:7.0~http://git.example.com/open-source/php-helloworld.git --name=php-helloworld"
 sh "oc expose svc/php-helloworld"
 -----
 
 image:img/ocp-cicd-deploy-php.png[]
 
-保存后再次触发 Pipeline，构建完成后可以通过 http://php-helloworld-cicd-devXX.apps.example.com/ 访问 PHP 页面
+保存后再次手动触发 Pipeline，构建完成后可以通过 http://php-helloworld-cicd-devXX.apps.example.com/ 访问 PHP 页面
 
 image:img/ocp-cicd-php-view.png[]
 
 == 自动触发 CICD 构建
 
+如下命令会通过 Curl 命令模拟一个自动触发 Pipleline 构建，本部分实验需要安装 curl。
+
 [source, bash]
 -----
-$ curl -k -X POST https://master.example.com:8443/oapi/v1/namespaces/cicd-dev10/buildconfigs/demopipeline/webhooks/secret101/generic
+$ curl -k -X POST https://master.example.com:8443/oapi/v1/namespaces/cicd-devXX/buildconfigs/demopipeline/webhooks/secret101/generic
 -----
 
-如上命令会自动触发一个构建。
+构建完成后再次访问 http://php-helloworld-cicd-devXX.apps.example.com/，页面显示如下
+
+image:img/ocp-cicd-php-changed.png[]
+

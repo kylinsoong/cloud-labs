@@ -1,3 +1,0 @@
-= 用户列表
-
-image:img/03-osp-users.png[用户列表]

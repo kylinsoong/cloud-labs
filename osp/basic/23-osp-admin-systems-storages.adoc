@@ -1,3 +1,0 @@
-= 块存储服务
-
-image:img/23-osp-admin-systems-storages.png[块存储服务]

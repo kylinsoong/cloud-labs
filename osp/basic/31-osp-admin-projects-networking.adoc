@@ -1,3 +1,0 @@
-= 网络拓扑
-
-image:img/31-osp-admin-projects-networking.png[网络拓扑]

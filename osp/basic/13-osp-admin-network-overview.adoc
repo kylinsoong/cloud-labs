@@ -1,3 +1,0 @@
-= 网络明细
-
-image:img/13-osp-admin-network-overview.png[网络明细]

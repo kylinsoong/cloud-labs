@@ -1,3 +1,0 @@
-= Host 列表
-
-image:img/07-osp-admin-host-aggregates.png[Host 列表]

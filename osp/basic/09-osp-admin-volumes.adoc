@@ -1,4 +1,0 @@
-= Volume 列表
-
-image:img/09-osp-admin-volumes.png[Volume 列表]
-

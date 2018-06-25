@@ -1,3 +1,0 @@
-= Images 明细
-
-image:img/29-osp-admin-projects-images.png[Images 明细]

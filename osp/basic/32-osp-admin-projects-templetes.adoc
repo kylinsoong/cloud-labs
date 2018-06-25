@@ -1,3 +1,0 @@
-= 资源类型
-
-image:img/32-osp-admin-projects-templetes.png[资源类型]

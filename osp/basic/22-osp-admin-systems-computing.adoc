@@ -1,3 +1,0 @@
-= 计算服务
-
-image:img/22-osp-admin-systems-computing.png[计算服务]

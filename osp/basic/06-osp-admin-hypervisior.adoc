@@ -1,3 +1,0 @@
-= Hypervisor 列表
-
-image:img/06-osp-admin-hypervisior.png[Hypervisor 列表]

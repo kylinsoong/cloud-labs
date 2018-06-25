@@ -1,4 +1,0 @@
-= 角色列表
-
-image:img/04-osp-roles.png[角色列表]
-

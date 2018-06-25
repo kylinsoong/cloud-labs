@@ -1,3 +1,0 @@
-= 网络子网列表
-
-image:img/16-osp-admin-network-ports.png[网络子网列表]

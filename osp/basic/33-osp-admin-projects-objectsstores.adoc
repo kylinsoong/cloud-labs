@@ -1,3 +1,0 @@
-= Object Store
-
-image:img/33-osp-admin-projects-objectsstores.png[Object Store]

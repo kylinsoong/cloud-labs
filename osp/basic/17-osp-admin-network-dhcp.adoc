@@ -1,3 +1,0 @@
-= 网络 DHCP 代理
-
-image:img/17-osp-admin-network-dhcp.png[网络 DHCP 代理]

@@ -320,8 +320,8 @@ mvn clean package -Popenshift
 [source, bash]
 .*3 - 登录 OCP，创建工程*
 ----
-$ oc login https://master.example.com:8443 -u userXX -p redhat
-$ oc new-project coolstoreXX --display-name='coolstore project'
+$ oc login https://master.example.com:8443 -u userxx -p redhat
+$ oc new-project coolstorexx --display-name='coolstore project'
 ----
 
 [source, bash]
@@ -361,7 +361,7 @@ $ oc get svc
 $ oc get routes
 ----
 
-通过 http://www-coolstoreXX.apps.example.com/ 访问如下所示
+通过 http://www-coolstorexx.apps.example.com/ 访问如下所示
 
 image:img/ocp-modernize-app-cloud.png[]
 

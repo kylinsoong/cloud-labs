@@ -1,3 +1,0 @@
-= 安全接入
-
-image:img/30-osp-admin-projects-seurity-access.png[安全接入]

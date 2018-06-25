@@ -1,3 +1,0 @@
-= 计算资源明细
-
-image:img/26-osp-admin-projects.png[计算资源明细]

@@ -1,3 +1,0 @@
-= Instance 列表
-
-image:img/08-osp-admin-instances.png[Instance 列表]

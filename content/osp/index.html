@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="basic-admin.html" />
+    <link rel="next" href="install.html" />
     
     
     <link rel="prev" href="../" />
@@ -116,7 +116,20 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="basic-admin.html">
+        <li class="chapter " data-level="1.2.1" data-path="install.html">
+            
+                <a href="install.html">
+            
+                    
+                    安装部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="basic-admin.html">
             
                 <a href="basic-admin.html">
             
@@ -129,7 +142,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="create-vm.html">
+        <li class="chapter " data-level="1.2.3" data-path="create-vm.html">
             
                 <a href="create-vm.html">
             
@@ -166,7 +179,7 @@
                 <a href="../ocp/env.html">
             
                     
-                    客户端环境准备
+                    安装部署
             
                 </a>
             
@@ -264,7 +277,43 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="openstack">OpenStack</h1>
-
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>OpenStack &#x91CD;&#x65B0;&#x5B9A;&#x4E49;&#x57FA;&#x7840;&#x67B6;&#x6784;&#xFF0C;&#x5B83;&#x4E0D;&#x4EC5;&#x53EF;&#x4EE5;&#x4E3A;&#x4F01;&#x4E1A;&#x5E26;&#x6765;&#x73B0;&#x4EE3;&#x5316;&#x7684;&#x57FA;&#x7840;&#x67B6;&#x6784;&#xFF0C;&#x8FD8;&#x80FD;&#x8FDB;&#x4E00;&#x6B65;&#x63D0;&#x5347;&#x7CFB;&#x7EDF;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x3001;&#x5B89;&#x5168;&#x6027;&#x548C;&#x654F;&#x6377;&#x6027;&#x3002;OpenStack &#x5E73;&#x53F0;&#x4E0D;&#x4EC5;&#x4EC5;&#x63D0;&#x4F9B;&#x5E38;&#x89C1;&#x7684; IaaS &#x8BA1;&#x7B97;&#x3001;&#x5B58;&#x50A8;&#x3001;&#x7F51;&#x7EDC;&#x548C;&#x90E8;&#x7F72;&#x529F;&#x80FD;&#x3002;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x52A8;&#x6001;&#x76D1;&#x63A7;&#x3001;&#x6570;&#x636E;&#x5904;&#x7406;&#x548C;&#x7F16;&#x6392;&#x5DE5;&#x5177;&#xFF0C;&#x518D;&#x52A0;&#x4E0A;&#x4E00;&#x7CFB;&#x5217;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x63A7;&#x5236;&#x9762;&#x677F; &#x2014; &#x6240;&#x6709;&#x60C5;&#x51B5;&#x4E00;&#x76EE;&#x4E86;&#x7136;&#x3002;OpenStack &#x53EF;&#x7528;&#x4F5C;&#x5206;&#x5E03;&#x5F0F;&#x5E94;&#x7528;&#x5E73;&#x53F0;&#x3002;&#x5728;&#x7EA2;&#x5E3D; OpenStack &#x5E73;&#x53F0;&#x4E0A;&#x8FD0;&#x884C;&#x5BB9;&#x5668;&#x6709;&#x52A9;&#x4E8E;&#x4F01;&#x4E1A;&#x63D0;&#x9AD8; IT &#x57FA;&#x7840;&#x67B6;&#x6784;&#x7684;&#x7075;&#x6D3B;&#x6027;&#x548C;&#x53EF;&#x6269;&#x5C55;&#x6027;&#xFF0C;&#x5E76;&#x964D;&#x4F4E;&#x6210;&#x672C;&#xFF0C;&#x4EE5;&#x4FBF;&#x5FEB;&#x901F;&#x6EE1;&#x8DB3;&#x7528;&#x6237;&#x7684;&#x5E94;&#x7528;&#x9700;&#x6C42;&#x3002;</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="img/OpenStack-Logo-Vertical.png" alt="OpenStack Logo Vertical.png"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="__">&#x529F;&#x80FD; &amp; &#x4F18;&#x52BF;</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>&#x6574;&#x5408;&#x578B;&#x5DE5;&#x7A0B;&#x8BBE;&#x8BA1;&#x6027;&#x80FD;</strong> - &#x9009;&#x62E9;&#x5408;&#x9002;&#x7684; OpenStack &#x5206;&#x53D1;&#x7248;&#x672C;&#x548C; Linux &#x65B9;&#x6848;&#x81F3;&#x5173;&#x91CD;&#x8981;&#x3002;&#x6B63;&#x56E0;&#x5982;&#x6B64;&#xFF0C;&#x5728;&#x8BA4;&#x8BC6;&#x5230;&#x4E8C;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;&#x6027;&#x4E4B;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x4E0E;&#x7D27;&#x5BC6;&#x76F8;&#x5173;&#x7684;&#x4EA7;&#x54C1;&#x56E2;&#x961F;&#x643A;&#x624B;&#x5408;&#x4F5C;&#xFF0C;&#x5171;&#x540C;&#x8BBE;&#x8BA1;&#x5F00;&#x53D1;&#x4E86; OpenStack &#x548C; Linux&#xAE;&#x3002;</p>
+</li>
+<li>
+<p><strong>&#x5185;&#x7F6E;&#x5B89;&#x5168;&#x6027;</strong> - &#x7EA2;&#x5E3D;&#x83B7;&#x5F97;&#x4E86;&#x7F8E;&#x56FD;&#x56FD;&#x9632;&#x90E8;&#x548C;&#x56FD;&#x5BB6;&#x6807;&#x51C6;&#x4E0E;&#x6280;&#x672F;&#x7814;&#x7A76;&#x6240;&#x7B49;&#x673A;&#x6784;&#x6240;&#x6388;&#x4E88;&#x7684;&#x6700;&#x9AD8;&#x7B49;&#x7EA7;&#x5B89;&#x5168;&#x8BA4;&#x53EF;&#x3002;&#x65E0;&#x8BBA;&#x662F;&#x5728;&#x516C;&#x5171;&#x8FD8;&#x662F;&#x79C1;&#x6709; OpenStack &#x4E91;&#x4E2D;&#x8FD0;&#x884C;&#xFF0C;SELinux &#x6240;&#x5177;&#x5907;&#x7684;&#x519B;&#x4E8B;&#x7EA7;&#x522B;&#x7684;&#x5B89;&#x5168;&#x6027;&#x548C;&#x7EA2;&#x5E3D;&#x4F01;&#x4E1A; Linux &#x7684;&#x5BB9;&#x5668;&#x6280;&#x672F;&#x90FD;&#x5C06;&#x6709;&#x6548;&#x4E3A;&#x60A8;&#x62B5;&#x5FA1;&#x5916;&#x90E8;&#x5165;&#x4FB5;&#x548C;&#x4FDD;&#x62A4;&#x6570;&#x636E;&#x5B89;&#x5168;&#x3002;</p>
+</li>
+<li>
+<p><strong>&#x53D7;&#x7BA1;&#x4E91;&#x73AF;&#x5883;</strong> - &#x4F7F;&#x7528;&#x7EA2;&#x5E3D; CloudForms&#xFF0C;&#x5BC6;&#x5207;&#x76D1;&#x63A7; OpenStack &#x73AF;&#x5883;&#x4E2D;&#x7684;&#x4E00;&#x5207;&#x52A8;&#x6001;&#x3002;&#x4F5C;&#x4E3A;&#x7EA2;&#x5E3D; OpenStack &#x5E73;&#x53F0;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x7EA2;&#x5E3D; CloudForms &#x662F;&#x4E13;&#x4E3A;&#x6DF7;&#x5408;&#x73AF;&#x5883;&#x8BBE;&#x8BA1;&#x7684;&#x7EDF;&#x4E00;&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;&#x3002;</p>
+</li>
+<li>
+<p><strong>&#x6A2A;&#x5411;&#x6269;&#x5C55;&#x5B58;&#x50A8;</strong> - &#x90E8;&#x7F72;&#x53EF;&#x5927;&#x89C4;&#x6A21;&#x6269;&#x5C55;&#x4E14;&#x9AD8;&#x5EA6;&#x654F;&#x6377;&#x7684;&#x79C1;&#x6709;&#x4E91;&#x57FA;&#x7840;&#x67B6;&#x6784;&#x4EE5;&#x53CA;&#x7EA2;&#x5E3D; Ceph &#x5B58;&#x50A8;&#x3002;&#x901A;&#x8FC7;&#x4E0E;&#x7EA2;&#x5E3D; OpenStack &#x5E73;&#x53F0;&#x53CA;&#x5176;&#x6240;&#x6709;&#x670D;&#x52A1;&#xFF08;&#x5305;&#x62EC; Nova&#x3001;Cinder&#x3001;Swift&#x3001;Glance &#x548C; Manila&#xFF09;&#x7D27;&#x5BC6;&#x6574;&#x5408;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x5355;&#x4E2A;&#x5FEB;&#x7167;&#x5373;&#x65F6;&#x90E8;&#x7F72;&#x6570;&#x767E;&#x53F0;&#x865A;&#x62DF;&#x673A;&#xFF0C;&#x5E76;&#x57FA;&#x4E8E;&#x884C;&#x4E1A;&#x6807;&#x51C6;&#x786C;&#x4EF6;&#x6784;&#x5EFA;&#x5168;&#x9762;&#x53D7;&#x652F;&#x6301;&#x5E76;&#x53EF;&#x50CF; OpenStack &#x4E00;&#x6837;&#x8FDB;&#x884C;&#x6A2A;&#x5411;&#x6269;&#x5C55;&#x7684;&#x4E91;&#x5E73;&#x53F0;&#x3002;</p>
+</li>
+<li>
+<p><strong>&#x6446;&#x8131;&#x4F9B;&#x5E94;&#x5546;&#x4F9D;&#x8D56;</strong> - &#x4E13;&#x6709;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x5728;&#x5F88;&#x5927;&#x7A0B;&#x5EA6;&#x4E0A;&#x53D7;&#x9650;&#x4E8E;&#x4F9B;&#x5E94;&#x5546;&#x81EA;&#x8EAB;&#x7684;&#x751F;&#x6001;&#x7CFB;&#x7EDF;&#x3002;&#x73B0;&#x5728;&#xFF0C;&#x60A8;&#x7EC8;&#x4E8E;&#x53EF;&#x4EE5;&#x6446;&#x8131;&#x684E;&#x688F;&#xFF0C;&#x5C06;&#x7EA2;&#x5E3D; OpenStack &#x5E73;&#x53F0;&#x7684;&#x5F00;&#x653E;&#x6280;&#x672F;&#x4E0E;&#x81EA;&#x5DF1;&#x73B0;&#x6709;&#x7684;&#x57FA;&#x7840;&#x67B6;&#x6784;&#x914D;&#x5408;&#x4F7F;&#x7528;&#x3002;</p>
+</li>
+<li>
+<p><strong>&#x4FDD;&#x6301;&#x66F4;&#x65B0;&#x6216;&#x501F;&#x52A9;&#x957F;&#x671F;&#x7A33;&#x5B9A;&#x7248;&#x672C;&#x5B9E;&#x73B0;&#x6807;&#x51C6;&#x5316;</strong> - &#x5229;&#x7528;&#x96C6;&#x6210;&#x578B;&#x7BA1;&#x7406;&#x7A0B;&#x5E8F;&#x5B9E;&#x73B0;&#x5B9E;&#x65F6;&#x66F4;&#x65B0;&#x548C;&#x5347;&#x7EA7;&#xFF0C;&#x4EE5;&#x8DDF;&#x4E0A;&#x5FEB;&#x901F;&#x521B;&#x65B0;&#x7684;&#x6B65;&#x4F10;&#xFF0C;&#x5E76;&#x83B7;&#x53D6;&#x6700;&#x65B0;&#x7684; OpenStack &#x529F;&#x80FD;&#x3002;&#x6216;&#x8005;&#x4F7F;&#x7528;&#x5355;&#x4E2A;&#x957F;&#x671F;&#x3001;&#x7A33;&#x5B9A;&#x7248;&#x672C;&#x5B9E;&#x73B0;&#x6280;&#x672F;&#x6807;&#x51C6;&#x5316;&#xFF0C;&#x540C;&#x65F6;&#x4EAB;&#x53D7;&#x6700;&#x957F; 5 &#x5E74;&#x7684;&#x652F;&#x6301;&#x670D;&#x52A1;&#xFF0C;&#x4F7F;&#x7528;&#x7EA2;&#x5E3D;&#x4F01;&#x4E1A; Linux &#x5EF6;&#x957F;&#x66F4;&#x65B0;&#x652F;&#x6301;&#x63D0;&#x4F9B;&#x7684;&#x9644;&#x52A0;&#x8BA2;&#x9605;&#xFF0C;&#x8FD8;&#x53EF;&#x83B7;&#x5F97;&#x989D;&#x5916; 2 &#x5E74;&#x652F;&#x6301;&#x670D;&#x52A1;&#x3002;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
                                 
                                 </section>
                             
@@ -296,7 +345,7 @@
                 </a>
                 
                 
-                <a href="basic-admin.html" class="navigation navigation-next " aria-label="Next page: 基本操作">
+                <a href="install.html" class="navigation navigation-next " aria-label="Next page: 安装部署">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -307,7 +356,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"OPENSTACK","level":"1.2","depth":1,"next":{"title":"基本操作","level":"1.2.1","depth":2,"path":"osp/basic-admin.adoc","ref":"osp/basic-admin.adoc","articles":[]},"previous":{"title":"INTRODUCTION","level":"1.1","depth":1,"path":"README.adoc","ref":"README.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"copyrightYear":"2018","copyrightHolder":"Kylin Soong"},"plugins":["collapsible-menu","-sharing","sharing-plus","splitter","back-to-top-button","edit-link"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Kylin Soong 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"collapsible-menu":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"wechat":"http://ksoong.org/cloud-labs/content/images/wechat.png","alipay":"http://ksoong.org/cloud-labs/content/images/alipay.png","title":"","button":"赞赏","alipayText":"支付宝捐赠","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"weibo":true,"linkedin":true,"google":true,"facebook":true,"all":["facebook","google","linkedin","weibo"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/kylinsoong/cloud-labs/blob/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"osp/README.adoc","mtime":"2018-06-19T06:01:00.199Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2018-06-25T07:12:12.590Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"OPENSTACK","level":"1.2","depth":1,"next":{"title":"安装部署","level":"1.2.1","depth":2,"path":"osp/install.adoc","ref":"osp/install.adoc","articles":[]},"previous":{"title":"INTRODUCTION","level":"1.1","depth":1,"path":"README.adoc","ref":"README.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{"copyrightYear":"2018","copyrightHolder":"Kylin Soong"},"plugins":["collapsible-menu","-sharing","sharing-plus","splitter","back-to-top-button","edit-link"],"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Kylin Soong 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"collapsible-menu":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"donate":{"wechat":"http://ksoong.org/cloud-labs/content/images/wechat.png","alipay":"http://ksoong.org/cloud-labs/content/images/alipay.png","title":"","button":"赞赏","alipayText":"支付宝捐赠","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"back-to-top-button":{},"sharing":{"weibo":true,"linkedin":true,"google":true,"facebook":true,"all":["facebook","google","linkedin","weibo"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/kylinsoong/cloud-labs/blob/gh-pages"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css"}},"file":{"path":"osp/README.adoc","mtime":"2018-07-04T07:14:04.390Z","type":"asciidoc"},"gitbook":{"version":"3.2.3","time":"2018-07-04T10:04:29.414Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -2,10 +2,11 @@
 
 . link:README.adoc[INTRODUCTION]
 . link:osp/README.adoc[OPENSTACK]
+.. link:osp/install.adoc[安装部署]
 .. link:osp/basic-admin.adoc[基本操作]
 .. link:osp/create-vm.adoc[创建 VM 实例]
 . link:ocp/README.adoc[OPENSHIFT]
-.. link:ocp/env.adoc[客户端环境准备]
+.. link:ocp/env.adoc[安装部署]
 .. link:ocp/getstart.adoc[快速开始]
 .. link:ocp/modernize-apps.adoc[传统应用云原生之路]
 .. link:ocp/devops.adoc[持续集成持续部署]

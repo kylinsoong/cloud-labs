@@ -9,6 +9,14 @@ image:img/labs2-downloads.png[]
 
 NOTE: 本地内容如果对 App Dev 感兴趣，且要体验传统应用云原生化，需要安装 Java，Maven 等, 具体可在上图中下载。  
 
+yum.example.com 目录中的下载项也可互联网上下载：
+
+* Maven 下载 - http://maven.apache.org/download.cgi
+* JBoss EAP 下载 - https://developers.redhat.com/products/eap/download/
+* Application Migration Toolkit 下载 - https://developers.redhat.com/products/rhamt/download/
+* monolith 代码下载 - https://github.com/RedHat-Middleware-Workshops/modernize-apps-labs/tree/master/monolith
+* Java 下载 - http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
 == 传统应用迁移
 
 image:img/rhamt-logo.png[]

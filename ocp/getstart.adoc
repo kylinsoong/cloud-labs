@@ -63,6 +63,8 @@ image:img/ocp-project-created.png[]
 
     registry.example.com/openshiftroadshow/parksmap:1.2.0
 
+NOTE: parksmap 镜像在 docker.io 中也可以找到，具体的地址是：docker.io/openshiftroadshow/parksmap:1.2.0
+
 按 Enter 键，
 
 image:img/ocp-deploy-image-parkmap.png[]
